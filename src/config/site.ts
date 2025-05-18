@@ -9,54 +9,66 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Our Story",
+      href: "/story",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Wedding Party",
+      href: "/weddingparty",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "FAQ",
+      href: "/faq",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Travel",
+      href: "/travel",
+    },
+    {
+      label: "Things to Do",
+      href: "/thingstodo",
+    },
+    {
+      label: "Registry",
+      href: "/registry",
+    },
+    {
+      label: "RSVP",
+      href: "/rsvp",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Our Story",
+      href: "/story",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Wedding Party",
+      href: "/weddingparty",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "FAQ",
+      href: "/faq",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Travel",
+      href: "/travel",
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: "Things to Do",
+      href: "/thingstodo",
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
+      label: "Registry",
+      href: "/registry",
     },
     {
-      label: "Logout",
-      href: "/logout",
+      label: "RSVP",
+      href: "/rsvp",
     },
   ],
   links: {
