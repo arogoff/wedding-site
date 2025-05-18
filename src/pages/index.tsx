@@ -128,7 +128,7 @@ export default function IndexPage() {
             {/* Calendar and Divider */}
             <div className="flex flex-row items-start gap-4">
               {/* Calendar on the left */}
-              <div className="flex-shrink-0 w-96 h-[30rem]">
+              <div className="flex-shrink-0 w-96 h-[30rem] flex items-start justify-center">
                 <Calendar
                   aria-label="Calendar"
                   value={value}
