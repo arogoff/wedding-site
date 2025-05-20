@@ -17,8 +17,8 @@ export const siteConfig = {
       href: "/weddingparty",
     },
     {
-      label: "FAQ",
-      href: "/faq",
+      label: "Registry",
+      href: "/registry",
     },
     {
       label: "Travel",
@@ -29,8 +29,8 @@ export const siteConfig = {
       href: "/thingstodo",
     },
     {
-      label: "Registry",
-      href: "/registry",
+      label: "FAQ",
+      href: "/faq",
     },
     {
       label: "RSVP",
