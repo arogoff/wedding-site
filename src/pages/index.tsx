@@ -1,12 +1,13 @@
-import { Link } from "@heroui/link";
 import { Calendar } from "@heroui/calendar";
-import { today, getLocalTimeZone, parseDate } from "@internationalized/date";
-import { Button, ButtonGroup } from "@heroui/button";
+import { parseDate } from "@internationalized/date";
+import { Button } from "@heroui/button";
 
 function addDays(date: any, days: number) {
   const result = new Date(date.year, date.month - 1, date.day);
   result.setDate(result.getDate() + days);
-  return parseDate(`${result.getFullYear()}-${(result.getMonth() + 1).toString().padStart(2, '0')}-${result.getDate().toString().padStart(2, '0')}`);
+  return parseDate(
+    `${result.getFullYear()}-${(result.getMonth() + 1).toString().padStart(2, "0")}-${result.getDate().toString().padStart(2, "0")}`
+  );
 }
 
 import React from "react";
@@ -19,14 +20,21 @@ export default function IndexPage() {
 
   const events: Record<
     string,
-    { title: string; time: string; location: string; description?: string; rsvp?: boolean }[]
+    {
+      title: string;
+      time: string;
+      location: string;
+      description?: string;
+      rsvp?: boolean;
+    }[]
   > = {
     "2026-10-08": [
       {
         title: "Welcome Party",
         time: "6:00 PM",
         location: "The Erlowest, Lake George, NY",
-        description: "Join us for a casual welcome party to kick off the celebrations!",
+        description:
+          "Join us for a casual welcome party to kick off the celebrations!",
         rsvp: true,
       },
     ],
@@ -41,7 +49,8 @@ export default function IndexPage() {
         title: "Reception",
         time: "6:00 PM",
         location: "The Erlowest, Lake George, NY",
-        description: "Celebrate with us at the reception with dinner and dancing.",
+        description:
+          "Celebrate with us at the reception with dinner and dancing.",
         rsvp: true,
       },
     ],
@@ -50,7 +59,8 @@ export default function IndexPage() {
         title: "Farewell Brunch",
         time: "10:00 AM",
         location: "The Erlowest, Lake George, NY",
-        description: "Say goodbye and enjoy a relaxing brunch before heading home.",
+        description:
+          "Say goodbye and enjoy a relaxing brunch before heading home.",
       },
     ],
   };
@@ -82,7 +92,11 @@ export default function IndexPage() {
     },
   ];
 
-  const formattedDate = new Date(value.year, value.month - 1, value.day).toLocaleDateString("en-US", {
+  const formattedDate = new Date(
+    value.year,
+    value.month - 1,
+    value.day
+  ).toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -114,16 +128,27 @@ export default function IndexPage() {
 
             {/* Text content */}
             <div className="relative z-10">
-              <p className="text-3xl font-semibold text-white">October 9th, 2026</p>
+              <p className="text-3xl font-semibold text-white">
+                October 9th, 2026
+              </p>
               <p className="text-xl text-white">at</p>
-              <p className="text-3xl font-semibold text-white">The Erlowest, Lake George, NY</p>
+              <p className="text-3xl font-semibold text-white">
+                The Erlowest, Lake George, NY
+              </p>
             </div>
           </div>
         </div>
 
         {/* Weekend at a Glance Section */}
         <div className="w-full px-4 md:px-8 mt-8">
-          <h2 className="text-3xl font-bold text-left mb-6">Weekend at a Glance</h2> {/* Left-aligned text */}
+          <h2
+            className="text-5xl font-bold text-left mb-6"
+            style={{
+              fontFamily: "'Pinyon Script', 'Dancing Script', cursive",
+            }}
+          >
+            Weekend at a Glance
+          </h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Calendar and Divider */}
             <div className="flex flex-row items-start gap-4">
@@ -144,13 +169,24 @@ export default function IndexPage() {
 
             {/* Event details on the right */}
             <div className="flex-grow h-[30rem] overflow-y-auto p-4">
-              <h4 className="text-2xl font-semibold mb-4">{formattedDate}</h4>
+              <h4
+                className="text-3xl font-semibold mb-4"
+                style={{
+                  fontFamily: "'Pinyon Script', 'Dancing Script', cursive",
+                }}
+              >
+                {formattedDate}
+              </h4>
               {dayEvents.map((event, index) => (
                 <div key={index} className="mb-6">
                   <p className="text-xl font-bold">{event.title}</p>
                   <p className="text-lg">{event.time}</p>
                   <p className="text-lg">{event.location}</p>
-                  {event.description && <p className="text-md text-gray-600 mt-2">{event.description}</p>}
+                  {event.description && (
+                    <p className="text-md text-gray-600 mt-2">
+                      {event.description}
+                    </p>
+                  )}
                   {event.rsvp && (
                     <Button
                       className="mt-4"
@@ -166,22 +202,18 @@ export default function IndexPage() {
               {/* Navigation buttons */}
               <div
                 className={`flex mt-4 ${
-                  value.compare(minValue) > 0 ? "justify-between" : "justify-end"
+                  value.compare(minValue) > 0
+                    ? "justify-between"
+                    : "justify-end"
                 }`}
               >
                 {value.compare(minValue) > 0 && (
-                  <Button
-                    variant="solid"
-                    onPress={handlePreviousDay}
-                  >
+                  <Button variant="solid" onPress={handlePreviousDay}>
                     Previous Day
                   </Button>
                 )}
                 {value.compare(maxValue) < 0 && (
-                  <Button
-                    variant="solid"
-                    onPress={handleNextDay}
-                  >
+                  <Button variant="solid" onPress={handleNextDay}>
                     Next Day
                   </Button>
                 )}
