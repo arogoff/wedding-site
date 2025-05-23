@@ -15,7 +15,6 @@ import lakegeorgehistoricalImg from "../assets/images/historicalassociation.jpg"
 import ledgerockImg from "../assets/images/ledgerockhillwinery.jpg";
 import springbrookhollowImg from "../assets/images/springbrookhollow.jpg";
 
-// Activity card component
 type ActivityCardProps = {
   image: string;
   title: string;
